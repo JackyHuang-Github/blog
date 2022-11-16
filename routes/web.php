@@ -18,5 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/hello', 'App\Http\Controllers\SiteController@hello');
-
 Route::get('/users/{id}', 'App\Http\Controllers\UserController@show');
+Route::get('/posts/{post}/comments/{comment}', function($post, $comment){
+    return "posts $post, coment $comment";
+});
