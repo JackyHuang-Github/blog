@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Route::get('/hello', 'App\Http\Controllers\SiteController@hello');
 Route::get('/users/{id}', 'App\Http\Controllers\UserController@show');
 Route::get('/posts/{post}/comments/{comment}', function ($post, $comment) {
@@ -38,3 +39,22 @@ Route::resource('posts', 'App\Http\Controllers\PostController');
 Route::apiResource('posts', 'App\Http\Controllers\Api\PostController');
 
 // php artisan make:controller Api/PostController --api
+=======
+Route::get('/posts/{post}/comments/{comment}', function($post,$comment){
+    return "posts $post , comments $comment";
+  });
+  
+Route::namespace('App\Http\Controllers')->group(function(){
+    Route::get('/hello', 'SiteController@hello');
+    Route::get('/users/{id?}', 'UserController@show');
+    Route::get('admin','SiteController@dashboard');
+    Route::get('album', 'SiteController@gallery');
+    Route::get('album2', 'SiteController@gallery2');
+});
+
+Route::get('/posts/{post}/comments/{comment}', function($post, $comment){
+    return "posts $post, coment $comment";
+});
+
+
+>>>>>>> bdd2e7eb82d211fc95a0d5ccb3edd3cc9b1d94f2
