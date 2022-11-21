@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,6 +19,22 @@ Route::get('/', function () {
 
 Route::get('/hello', 'App\Http\Controllers\SiteController@hello');
 Route::get('/users/{id}', 'App\Http\Controllers\UserController@show');
-Route::get('/posts/{post}/comments/{comment}', function($post, $comment){
+Route::get('/posts/{post}/comments/{comment}', function ($post, $comment) {
     return "posts $post, coment $comment";
 });
+
+// Route::get('admin','SiteController@dashboard');
+Route::get('admin', 'App\Http\Controllers\SiteController@dashboard');
+
+// Route::get('album', 'SiteController@gallery');
+Route::get('album', 'App\Http\Controllers\SiteController@gallery');
+
+// Route::get('album2', 'SiteController@gallery2');
+Route::get('album2', 'App\Http\Controllers\SiteController@gallery2');
+
+Route::get('demo', 'App\Http\Controllers\PostController@demo');
+
+Route::resource('posts', 'App\Http\Controllers\PostController');
+Route::apiResource('posts', 'App\Http\Controllers\Api\PostController');
+
+// php artisan make:controller Api/PostController --api
