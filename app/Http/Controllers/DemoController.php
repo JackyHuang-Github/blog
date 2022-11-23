@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class PostController extends Controller
+class DemoController extends Controller
 {
     public function demo()
     {
