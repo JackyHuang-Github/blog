@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - A Pen by JackyHuang-Github</title>
+  <title>CSS 3D Rotation</title>
   <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -10,9 +10,9 @@
 <!-- partial:index.partial.html -->
 <html>
   <head>
-    <title> CSS 3D Rotation</title>
-    <!-- <link rel="stylesheet" type="text/css" href={{asset("gallery/style.css")}}> -->
-    <link rel="stylesheet" type="text/css" href="gallery/style.css">
+    <title>CSS 3D Rotation</title>
+    <!-- <link rel="stylesheet" type="text/css" href={{asset("galleries/gallery/style.css")}}> -->
+    <link rel="stylesheet" type="text/css" href="galleries/gallery/style.css">
   </head>
   <body>
     <div class="box">

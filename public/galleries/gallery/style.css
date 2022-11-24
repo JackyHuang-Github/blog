@@ -63,6 +63,6 @@ body{
 .hello{
   width: 200px;
   height: 300px; clear: both;
-  img-radius: 300px;
+  /* img-radius: 300px; */
   clear: both;
 }
