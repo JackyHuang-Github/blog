@@ -31,19 +31,27 @@ class SiteController extends Controller
         // return view('galleries.gallery2', $data);
 
         // 第三種
-        // $pic1 = 'pic1.jpg';
-        // $pic2 = 'pic2.jpg';
-        // $pic3 = 'pic3.jpg';
-        // $pic4 = 'pic4.jpg';
-        // $pic5 = 'pic5.jpg';
-        // return view('galleries.gallery2', compact('pic1', 'pic2', 'pic3', 'pic4', 'pic5'));
-
         $pic1 = 'pic1.jpg';
         $pic2 = 'pic2.jpg';
         $pic3 = 'pic3.jpg';
         $pic4 = 'pic4.jpg';
         $pic5 = 'pic5.jpg';
-        $picNames = [$pic1, $pic2, $pic3, $pic4, $pic5];
-        return view('galleries.gallery2', compact('picNames'));
+        return view('galleries.gallery2', compact('pic1', 'pic2', 'pic3', 'pic4', 'pic5'));
+
+        // $pic1 = 'pic1.jpg';
+        // $pic2 = 'pic2.jpg';
+        // $pic3 = 'pic3.jpg';
+        // $pic4 = 'pic4.jpg';
+        // $pic5 = 'pic5.jpg';
+        // $picNames = [$pic1, $pic2, $pic3, $pic4, $pic5];
+        // $picNamesString = '';
+        // for($i = 0; $i < count($picNames); $i++) {
+        //     if($i < count($picNames) - 1) 
+        //         $picNamesString = $picNamesString . $picNames[$i] . ',';
+        //     else
+        //         $picNamesString = $picNamesString . $picNames[$i];
+        // }
+            
+        // return view('galleries.gallery2', compact('picNamesString'));
     }
 }

@@ -7,15 +7,18 @@
   </head>
 <body>
     <div>
-      @foreach ($picNames as $picName)
-        <img class="hello" src="galleries/gallery2/pictures/{!! $picName !!}">
-      @endforeach
+      // <?php
+      // $pns = {!! $picNamesString !!}
+      // @foreach ($picNames as $picName)
+      //   <img class="hello" src="galleries/gallery2/pictures/{!! $picName !!}">
+      // @endforeach
+      // ?> 
 
-      <!-- <img class="hello" src="galleries/gallery2/pictures/{!! $pic1 !!}">
+      <img class="hello" src="galleries/gallery2/pictures/{!! $pic1 !!}">
       <img class="hello" src="galleries/gallery2/pictures/{!! $pic2 !!}">
       <img class="hello" src="galleries/gallery2/pictures/{!! $pic3 !!}">
       <img class="hello" src="galleries/gallery2/pictures/{!! $pic4 !!}">
-      <img class="hello" src="galleries/gallery2/pictures/{!! $pic5 !!}"> -->
+      <img class="hello" src="galleries/gallery2/pictures/{!! $pic5 !!}">
     </div>
 </body>
 </html>

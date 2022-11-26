@@ -24,7 +24,8 @@ Route::get('/posts/{post}/comments/{comment}', function ($post, $comment) {
 Route::namespace('App\Http\Controllers\test')->group(function () {
     Route::get('/hello', 'TestController@hello');
     Route::get('/users/{id?}', 'TestController@show');
-    Route::get('/paras/{type?}', 'TestController@paraSend');
+    Route::get('/paras/{type}}', 'TestController@paraSend');
+    Route::get('/demo', 'TestController@demo');
 });
 
 Route::namespace('App\Http\Controllers')->group(function () {

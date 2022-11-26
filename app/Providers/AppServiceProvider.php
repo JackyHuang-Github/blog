@@ -13,7 +13,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 
     /**
@@ -23,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->share('global', 'ToDo Global');
+        view()->composer(['test.demo'], function($view){
+            $view->with('multi', '多視圖變數');
+        });
     }
 }

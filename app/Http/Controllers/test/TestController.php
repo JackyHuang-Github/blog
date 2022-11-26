@@ -69,4 +69,9 @@ class TestController extends Controller
         // $age = '<b>20</b>';
         // return view('test.paras', compact('name', 'age'));
     }
+
+    public function demo()
+    {
+        return view('test.demo');
+    }
 }
