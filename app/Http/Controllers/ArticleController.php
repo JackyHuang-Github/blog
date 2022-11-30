@@ -1,13 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\api;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\ItemRequest;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
 
-class ItemController extends Controller
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +12,16 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {
+        return view('articles.create');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
         //
     }
@@ -25,25 +32,9 @@ class ItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    // public function store(Request $request)
-    public function store(ItemRequest $request)
+    public function store(Request $request)
     {
-        // // 驗證示範
-        // $validator = Validator::make($request->all(), [
-        //     'title' => 'required | max:10',
-        //     'price' => 'required | integer | min:0',
-        //     'desc' => 'string | max:250'
-        // ]);
-
-        // if($validator->fails()) {
-        //     dd($validator);
-        // }
-
-        return 'Ok';
-
-        // return $request->all();
-        // 返回到 index 頁面
-        return redirect(url('api/items' . 1));   
+        //
     }
 
     /**
@@ -53,6 +44,17 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
         //
     }

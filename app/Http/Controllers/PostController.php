@@ -20,7 +20,9 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        $modes = ['recommend' => '編輯精選', 'season' => '當季商品', 'cp' => '超值商品'];
+        $mode = 'cp';
+        return view('posts.create', compact('modes', 'mode'));
     }
 
     /**
@@ -51,6 +53,8 @@ class PostController extends Controller
     // public function store(Request $request)
     public function store(PostRequest $request)
     {
+        // return $request->all();
+
         // return "first row";
 
         // // 驗證示範
@@ -63,11 +67,31 @@ class PostController extends Controller
         //     dd($validator);
         // }
 
+        // //$data = $request->all(); //取得所有前台傳入的資料
+        // $data = $request->except('_token'); //取得所有前台傳入的資料
+        // $data['options'] = implode(',',$data['options']);
+        
+        if ($request->hasFile('pic')) {
+            $file = $request->file('pic');      //獲取UploadFile例項
+            if ($file->isValid()) {            //判斷檔案是否有效
+                //$filename = $file->getClientOriginalName(); //檔案原名稱
+                $extension = $file->getClientOriginalExtension(); //副檔名
+                $filename = time() . "." . $extension;    //重新命名
+                // $data['pic'] = $filename;
+                //$file->move('D:\xampp\htdocs\form\storage\app\public\images', $filename); //移動至指定目錄
+                $file->storeAs('public/pic', $filename);
+            }
+        }
+        else {
+            echo "未指定圖片";
+        }
+            
+
         return 'Ok';
 
         // return $request->all();
         // 返回到 index 頁面
-        return redirect(url('posts/' . 1));   
+        return redirect(url('/posts/create'));   
     }
 
     /**

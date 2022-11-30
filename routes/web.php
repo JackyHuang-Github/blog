@@ -42,9 +42,14 @@ Route::get('paint', function() {
 
 Route::resource('/posts', 'App\Http\Controllers\PostController');
 Route::resource('/api/items', 'App\Http\Controllers\api\ItemController');
+Route::resource('/articles', 'App\Http\Controllers\ArticleController');
 
 Route::get('/url', function() {
 	//return url('paint');
 	//return route('mypaint');
 	return action([SiteController::class, 'demo']);
+});
+
+Route::get('storagepath',function(){
+    return storage_path();
 });
