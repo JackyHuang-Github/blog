@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\PostRequest;
+use App\Http\Requests\ItemRequest;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
-class PostController extends Controller
+class ItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return '所有文章';   
-    }
-
-    public function create()
-    {
-        return view('posts.create');
+        //
     }
 
     /**
@@ -30,33 +26,13 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     // public function store(Request $request)
-    // {
-    //     // 驗證示範
-    //     $validator = Validator::make($request->all(), [
-    //         'title' => 'required | max:10',
-    //         'desc' => 'required'
-    //     ]);
-
-    //     if($validator->fails()) {
-    //         dd($validator);
-    //     }
-
-    //     return 'Ok';
-
-    //     // return $request->all();
-    //     // 返回到 index 頁面
-    //     return redirect(url('posts/' . 1));   
-    // }
-
-    // public function store(Request $request)
-    public function store(PostRequest $request)
+    public function store(ItemRequest $request)
     {
-        // return "first row";
-
         // // 驗證示範
         // $validator = Validator::make($request->all(), [
         //     'title' => 'required | max:10',
-        //     'desc' => 'required'
+        //     'price' => 'required | integer | min:0',
+        //     'desc' => 'size | max:250'
         // ]);
 
         // if($validator->fails()) {
@@ -67,7 +43,7 @@ class PostController extends Controller
 
         // return $request->all();
         // 返回到 index 頁面
-        return redirect(url('posts/' . 1));   
+        return redirect(url('api/items' . 1));   
     }
 
     /**
@@ -78,7 +54,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return '文章 $id';
+        //
     }
 
     /**

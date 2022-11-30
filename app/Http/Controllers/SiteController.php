@@ -14,6 +14,11 @@ class SiteController extends Controller
         return view('galleries.gallery');
     }
 
+    public function demo()
+    {
+        return 'demo';
+    }
+
     public function gallery2()
     {
         // $picCount = 5;
