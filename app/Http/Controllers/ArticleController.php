@@ -34,7 +34,26 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->hasFile('pic')) {
+            // 獲取UploadFile例項
+            $file = $request->file('pic');
+            // 判斷檔案是否有效
+            if ($file->isValid()) {            
+                // 檔案原名稱
+                // $filename = $file->getClientOriginalName();
+                // 副檔名
+                $extension = $file->getClientOriginalExtension();
+                // 重新命名
+                $filename = time() . "." . $extension;
+                // $data['pic'] = $filename;
+                // 移動至指定目錄
+                // $file->move('D:\xampp8\htdocs\form\storage\app\public\images', $filename); 
+                $file->storeAs('public/pic', $filename);
+            }
+        }
+        else {
+            echo "未指定圖片";
+        }
     }
 
     /**

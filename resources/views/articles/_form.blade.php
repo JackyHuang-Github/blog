@@ -1,0 +1,54 @@
+<!-- 標題 -->
+{!! Form::label('subject', '標題') !!}
+{!! Form::text('subject', null, ['class'=>'myclass', 'style'=>'color:red;']) !!}<br>
+
+@error('subject')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+
+<!-- 分類 -->
+{!! Form::label('category', '分類') !!}
+分類一{!! Form::radio('category', 1, true) !!}
+分類二{!! Form::radio('category', 2, false) !!}
+分類三{!! Form::radio('category', 3, false) !!}<br>
+
+@error('category')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+
+<!-- 內文 -->
+{!! Form::label('desc', '內文') !!}
+{!! Form::textarea('desc', null, ['cols' => 60, 'rows' => 20]) !!}<br>
+
+@error('desc')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+
+<!-- 狀態 -->
+{!! Form::label('status', '狀態') !!}
+開啟{!! Form::radio('status', 1, true) !!}
+關閉{!! Form::radio('status', 0, false) !!}
+
+<!-- 排序 -->
+{!! Form::sort('sort', '排序') !!}
+
+<!-- 啟用日期 -->
+{!! Form::label('enable_at', '啟用日期', []) !!}<br><br>
+{!! Form::date('enable_at', null) !!}
+
+<!-- 標籤 -->
+{!! Form::label('tags[]', 'news') !!}
+{!! Form::checkbox('tags[]', 'news', false) !!}
+{!! Form::label('tags[]', 'skill') !!}
+{!! Form::checkbox('tags[]', 'skill', false) !!}
+{!! Form::label('tags[]', 'like') !!}
+{!! Form::checkbox('tags[]', 'like', false) !!}<br><br>
+
+{!! Form::label('month', '月份', []) !!}
+{!! Form::selectMonth('month', null, []) !!}<br><br>
+
+{!! Form::label('pic', '圖片', []) !!}
+{!! Form::file('pic', []) !!}<br><br>
+
+{!! Form::submit('送出', []) !!}
+{!! Form::reset('重置', []) !!}

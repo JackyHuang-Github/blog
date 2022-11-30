@@ -50,6 +50,7 @@ Route::get('/url', function() {
 	return action([SiteController::class, 'demo']);
 });
 
+// 老師提供：可直接取得 storage 的路徑
 Route::get('storagepath',function(){
     return storage_path();
 });
