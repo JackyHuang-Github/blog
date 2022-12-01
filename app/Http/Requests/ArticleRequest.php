@@ -27,7 +27,8 @@ class ArticleRequest extends FormRequest
             'subject' => 'required | string | max:50',
             'category' => 'required | integer',
             'desc' => 'required | string | max:4000',
-            'sort' => 'required | integer'
+            'sort' => 'required | integer',
+            'pic' => 'required | string'
         ];
     }
 }

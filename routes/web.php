@@ -40,9 +40,9 @@ Route::get('paint', function() {
 	return view('paint');
 })->name('mypaint');
 
-Route::resource('/posts', 'App\Http\Controllers\PostController');
-Route::resource('/api/items', 'App\Http\Controllers\api\ItemController');
 Route::resource('/articles', 'App\Http\Controllers\ArticleController');
+Route::resource('/posts', 'App\Http\Controllers\PostController');
+// Route::resource('/api/items', 'App\Http\Controllers\api\ItemController');
 
 Route::get('/url', function() {
 	//return url('paint');

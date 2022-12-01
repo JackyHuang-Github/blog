@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return '所有文章';   
+        return '所有文章';
     }
 
     public function create()
