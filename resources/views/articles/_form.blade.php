@@ -30,7 +30,7 @@
 關閉{!! Form::radio('status', 0, false) !!}
 
 <!-- 排序 -->
-{!! Form::sort('sort', '排序') !!}
+<!-- {!! Form::sort('sort', '排序') !!} -->
 
 <!-- 啟用日期 -->
 {!! Form::label('enable_at', '啟用日期', []) !!}<br><br>
