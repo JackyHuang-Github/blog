@@ -21,8 +21,11 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        $this->call(CgySeeder::class);
-        DB::Statement('SET FOREIGN_KEY_CHECKS=1;');
+
+        // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        // $this->call(CgySeeder::class);
+        // DB::Statement('SET FOREIGN_KEY_CHECKS=1;');
+
+        \App\Models\Cgy::factory(100)->create();
     }
 }
