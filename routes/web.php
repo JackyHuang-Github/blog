@@ -27,13 +27,13 @@ Route::namespace('App\Http\Controllers\test')->group(function () {
     Route::get('/users/{id?}', 'TestController@show');
     Route::get('/paras/{type}}', 'TestController@paraSend');
     // Route::get('/demo', 'TestController@demo');
-    Route::get('/demo', 'TestController@demo');
 });
 
 Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/admin', 'SiteController@dashboard');
     Route::get('/album', 'SiteController@gallery');
     Route::get('/album2', 'SiteController@gallery2');
+    Route::get('/demo', 'SiteController@demo');
 });
 
 Route::get('paint', function() {
@@ -53,4 +53,9 @@ Route::get('/url', function() {
 // 老師提供：可直接取得 storage 的路徑
 Route::get('storagepath',function(){
     return storage_path();
+});
+
+// 取得預設資料庫
+Route::get('/config', function() {
+    dd(config('database.default'));
 });

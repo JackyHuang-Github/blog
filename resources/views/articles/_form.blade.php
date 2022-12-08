@@ -8,7 +8,7 @@
 
 <!-- 分類 -->
 {!! Form::label('category', '分類：') !!}
-分類一{!! Form::radio('category', 1, false) !!}
+分類一{!! Form::radio('category', 1, true) !!}
 分類二{!! Form::radio('category', 2, false) !!}
 分類三{!! Form::radio('category', 3, false) !!}<br>
 
