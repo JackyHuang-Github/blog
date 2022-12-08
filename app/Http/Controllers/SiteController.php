@@ -16,7 +16,7 @@ class SiteController extends Controller
 
     public function demo()
     {
-        return 'demo';
+        return view('demo');
     }
 
     public function gallery2()

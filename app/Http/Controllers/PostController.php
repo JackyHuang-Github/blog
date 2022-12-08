@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return '所有文章';
+        // return '所有文章';
     }
 
     public function create()
@@ -126,5 +126,19 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function doAny(Request $request) {
+        // 取得完整檔名
+        $filenameWithExt = $request->file('pic')->getClientOriginalExtension();
+        // 只取檔名
+        $filename = PATHINFO($filenameWithExt, PATHINFO_FILENAME);
+        // 只取副檔名
+        $extension = $request->file('pic')->getClientOriginalExtension();
+        // 生成新檔名
+        $filenameToStore = $filename . '_' . time() . '.' . $extension;
+        $path = $request->file('pic')->storeAs('public/storage/pic', $filenameToStore);
+
+        return $path;
     }
 }
