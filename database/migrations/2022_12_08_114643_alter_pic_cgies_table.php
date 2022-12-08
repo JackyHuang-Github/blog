@@ -25,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        // 
+        Schema::table('cgies', function (Blueprint $table) {
+            $table->string('pic')->default(null)->change();
+        });
     }
 };

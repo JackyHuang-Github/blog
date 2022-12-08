@@ -16,11 +16,13 @@ return new class extends Migration
         Schema::create('cgies', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('subject', 100);
-            $table->string('pic', 255);
-            $table->string('remark', 200)->nullable();
-            $table->text('desc');
+            // * subject
+            $table->string('subject', 100)->default('');
+            $table->string('pic', 255)->nullable(true);
+            $table->text('desc')->nullable(true);
+            // * enabled
             $table->boolean('enabled')->default(true);
+            // * sort
             $table->integer('sort')->default(0);
         });
     }
