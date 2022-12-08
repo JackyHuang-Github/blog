@@ -23,9 +23,10 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        // $this->call(CgySeeder::class);
+        // // $this->call(CgySeeder::class);
+        $this->call(ArticleSeeder::class);
         // DB::Statement('SET FOREIGN_KEY_CHECKS=1;');
 
-        \App\Models\Cgy::factory(100)->create();
+        
     }
 }
