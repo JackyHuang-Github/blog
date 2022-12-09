@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\Validator;
@@ -102,7 +103,10 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return '文章 $id';
+        $post = Post::find($id);
+        return $post;
+
+        // return '文章 $id';
     }
 
     /**

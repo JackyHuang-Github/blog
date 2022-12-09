@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Cgy;
+use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 
@@ -42,7 +44,9 @@ Route::get('paint', function() {
 
 Route::resource('/articles', 'App\Http\Controllers\ArticleController');
 Route::resource('/posts', 'App\Http\Controllers\PostController');
-// Route::resource('/api/items', 'App\Http\Controllers\api\ItemController');
+Route::resource('/api/items', 'App\Http\Controllers\api\ItemController');
+Route::resource('/cgies', 'App\Http\Controllers\CgyController');
+
 
 Route::get('/url', function() {
 	//return url('paint');
@@ -58,4 +62,48 @@ Route::get('storagepath',function(){
 // 取得預設資料庫
 Route::get('/config', function() {
     dd(config('database.default'));
+});
+
+Route::get('newcgy', function() {
+    // 方法一
+    $cgy = new Cgy;
+    $cgy->title = '我的英雄學院：方法一';
+    $cgy->desc = '我的英雄學院劇場版：方法一';
+    $cgy->enabled = true;
+    $cgy->save();
+
+    // 方法二
+    // $cgy = new Cgy([
+    //     'title' => '我的英雄學院：方法二',
+    //     'desc' => '我的英雄學院劇場版：方法二',
+    //     'enabled' => true
+    // ]);
+    // $cgy->save();
+});
+
+Route::get('/distinct', function() {
+    $data = Article::select('cgy_id')->distinct('cgy_id')->get();
+    // $data = Article::select(['id', 'subject', 'cgy_id'])->distinct('cgy_id')->get();
+    // $data = Cgy::select(['id', 'subject', 'remark'])->distinct('remark')->where('remark', !ISNULL())->get();
+    return $data;
+});
+
+Route::get('/pluck', function() {
+    // $data = Cgy::select(['id', 'subject'])->get();
+    $data = Cgy::pluck('subject','id');
+    // 注意：pluck 不可使用 [] 陣列，而是直接指定欄位即可
+    // $data = Cgy::pluck(['subject','id']);
+    return $data;
+});
+
+Route::get('/changecgy', function() {
+    $cgy = Cgy::find(1);
+    $cgy->subject = '新分類';
+    $cgy->save();
+});
+
+Route::get('/delcgy/{cgy}', function() {
+    $cgy = Cgy::find(1);
+    $cgy->subject = '新分類';
+    $cgy->save();
 });

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->timestamps();
             $table->bigInteger('guest_id')->nullable();
             $table->bigInteger('article_id')->nullable();
-            $table->text('content');
+            // *
+            $table->text('content')->default('');
         });
     }
 

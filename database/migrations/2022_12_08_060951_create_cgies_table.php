@@ -18,8 +18,8 @@ return new class extends Migration
             $table->timestamps();
             // * subject
             $table->string('subject', 100)->default('');
-            $table->string('pic', 255)->nullable(true);
-            $table->text('desc')->nullable(true);
+            $table->string('pic', 255)->nullable();
+            $table->text('desc')->nullable();
             // * enabled
             $table->boolean('enabled')->default(true);
             // * sort
