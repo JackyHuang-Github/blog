@@ -22,11 +22,12 @@ class ArticleFactory extends Factory
 
         return [
             'subject' => $this->faker->realText(20), 
-            'content' => 'a',
+            'content' => $this->faker->realText,
+            'enabled_at' => Carbon::now()->addDays(rand(0, 20)),
+            'sort' => rand(0, 20);
             'enabled' => $this->faker->randomElement([true, false]), 
-            'pic' => $this->faker->imageUrl($width=640, $height=480),
-            'cgy_id' => rand(1, 10),
-            'enabled_at' => Carbon::now()->addDays(rand(1, 20))
+            'pic' => $this->faker->imageUrl,
+            'cgy_id' => rand(1, 20)
         ];
     }
 }

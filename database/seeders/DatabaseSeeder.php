@@ -22,9 +22,11 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         $this->call(CgySeeder::class);
-        // DB::Statement('SET FOREIGN_KEY_CHECKS=1;');
+        $this->call(TagSeeder::class);
+        $this->call(ArticleSeeder::class);
+        DB::Statement('SET FOREIGN_KEY_CHECKS=1;');
 
         // $this->call(ArticleSeeder::class);
     }

@@ -4,9 +4,10 @@ namespace Database\Seeders;
 
 use Carbon\Carbon;
 use Faker\Factory;
+use App\Models\Article;
+use App\Models\ArticleTag;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Article;
 
 class ArticleSeeder extends Seeder
 {
@@ -30,6 +31,14 @@ class ArticleSeeder extends Seeder
             //     // 'enabled_at' => Carbon::createFromFormat('Y-m-d', $faker->date)
             // ]);
         // }
-        \App\Models\Article::factory()->times(100)->create();
+
+        $articles = Article::factory()->times(100)->create();
+
+        foreach ($articles as $article) {
+            $at = new ArticleTag;
+            $at->article_id = $article->id;
+            $at->tag_id = rand(1,30);
+            $at->save();
+        }
     }
 }

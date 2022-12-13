@@ -19,9 +19,10 @@ class CgyFactory extends Factory
     {
         return [
             // 'subject' => '主題 ' . rand(1, 1000), 
-            'subject' => $this->faker->realText(20), 
+            'subject' => $this->faker->realText(15), 
             'enabled' => $this->faker->randomElement([true, false]), 
-            'enabled_at' => Carbon::now()->addDays(rand(1, 20))
+            'enabled_at' => Carbon::now()->addDays(rand(1, 20)),
+            'pic' => $this->faker->imageUrl($width = 640, $height = 480)
         ];
     }
 }

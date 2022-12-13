@@ -10,4 +10,9 @@ class Cgy extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'desc', 'enabled'];
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 }

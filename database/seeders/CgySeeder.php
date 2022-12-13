@@ -19,10 +19,7 @@ class CgySeeder extends Seeder
     public function run()
     {
         Cgy::truncate();
-
         $faker = Factory::create('zh_TW');
-
-        Cgy::factory()->times(100)->create();
 
         // for($i = 0; $i < 100; $i++) {
         //     // Cgy::create(['subject' => '主題', 'enabled' => true]);
@@ -34,5 +31,7 @@ class CgySeeder extends Seeder
         //         // 'enabled_at' => Carbon::createFromFormat('Y-m-d', $faker->date)
         //     ]);
         // }
+
+        Cgy::factory()->times(100)->create();
     }
 }

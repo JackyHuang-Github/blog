@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('message_board', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->id();
+            $table->string('title',50);
+            $table->string('url',255)->nullable();
+            $table->integer('sort')->default(0);
             $table->timestamps();
-            $table->bigInteger('guest_id')->nullable();
-            $table->bigInteger('article_id')->nullable();
-            // *
-            $table->text('content')->default('');
         });
     }
 
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('message_board');
+        Schema::dropIfExists('tags');
     }
 };
