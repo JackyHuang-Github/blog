@@ -45,7 +45,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = ['title' => $request->title , 'content' => $request->content];
+
+        $post = Post::create($input);
+
+        if(isset($post)){
+            $data = ['post' => $post];
+            return $this->makeJson(1,$data,'新增文章成功');
+        }else{
+            return $this->makeJson(0,null,'新增文章失敗');
+        }
     }
 
     /**
@@ -56,7 +65,14 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+
+        if(isset($post)){
+            $data = ['post' => $post];
+            return $this->makeJson(1, $data, null);
+        }else{
+            return $this->makeJson(0, null, '找不到該文章');
+        }
     }
 
     /**
