@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 use App\Http\Requests\ArticleRequest;
 
@@ -66,7 +67,8 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $article = Article::with('cgy')->with('tags')->find(1);
+        return $article;
     }
 
     /**
