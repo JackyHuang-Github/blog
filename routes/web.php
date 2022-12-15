@@ -46,7 +46,7 @@ Route::resource('/articles', 'App\Http\Controllers\ArticleController');
 // Route::resource('/posts', 'App\Http\Controllers\PostController');
 Route::resource('/api/items', 'App\Http\Controllers\api\ItemController');
 Route::resource('/cgies', 'App\Http\Controllers\CgyController');
-Route::apiResource('/posts', 'App\Http\Controllers\Api\PostController');
+// Route::apiResource('api/posts', 'App\Http\Controllers\Api\PostController');
 
 
 Route::get('/url', function() {
