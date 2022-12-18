@@ -19,3 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('posts', 'App\Http\Controllers\Api\PostController');
+
+Route::group(['prefix' => 'auth', 'namespace' => 'App\Http\Controllers\Api'], function() {
+    Route::get('/', 'AuthController@me')->name('me');
+    Route::get('login', 'AuthController@login')->name('login');
+    Route::get('logout', 'AuthController@logout')->name('logout');
+});
