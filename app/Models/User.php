@@ -12,7 +12,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
+<<<<<<< HEAD
     // 錯在這裡
+=======
+>>>>>>> origin/master_blog
     // use HasApiTokens, HasFactory, Notifiable;
 
     /**
