@@ -14,11 +14,16 @@ class AuthController extends Controller
     }
 
     public function me() {
+        // App/Models/User
         return response()->json(auth()->user());
     }
 
     public function login() {
         $credentials = request(['email', 'password']);
+
+        if ($credentials == null) {
+            echo "login fail <br>";
+        }
 
         try {
             if(!$token = auth()->guard('api')->attempt($credentials)) {
