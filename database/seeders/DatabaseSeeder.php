@@ -29,20 +29,17 @@ class DatabaseSeeder extends Seeder
         // $this->call(PostSeeder::class);
         // DB::Statement('SET FOREIGN_KEY_CHECKS=1;');     // 開啟外鍵偵測
 
-        // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        // \App\Models\User::truncate();
-        // \App\Models\User::factory(10)->create();
-        // \App\Models\Post::truncate();
-        // \App\Models\Post::factory(10)->create();        
-        // $this->call(CgySeeder::class);
-        // $this->call(TagSeeder::class);
-        // $this->call(ArticleSeeder::class);
-        // $this->call(ArticleTagSeeder::class);
-        // DB::Statement('SET FOREIGN_KEY_CHECKS=1;');
-
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');     // 關閉外鍵偵測
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        $this->call(CgySeeder::class);
+        $this->call(TagSeeder::class);
+        $this->call(ArticleSeeder::class);
+        $this->call(ArticleTagSeeder::class);
         $this->call(UserSeeder::class);
-        DB::Statement('SET FOREIGN_KEY_CHECKS=1;');     // 開啟外鍵偵測
+        DB::Statement('SET FOREIGN_KEY_CHECKS=1;');
+
+        // DB::statement('SET FOREIGN_KEY_CHECKS=0;');     // 關閉外鍵偵測
+        // $this->call(UserSeeder::class);
+        // DB::Statement('SET FOREIGN_KEY_CHECKS=1;');     // 開啟外鍵偵測
 
     }
 }
