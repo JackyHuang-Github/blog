@@ -18,7 +18,7 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-        User::truncate();
+        // User::truncate();
 
         return [
             'name' => $this->faker->name(),
