@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Exceptions\JWTException;
@@ -20,10 +20,6 @@ class AuthController extends Controller
 
     public function login() {
         $credentials = request(['email', 'password']);
-
-        if ($credentials == null) {
-            echo "login fail <br>";
-        }
 
         try {
             if(!$token = auth()->guard('api')->attempt($credentials)) {
